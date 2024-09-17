@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: star-wars-trivia
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+#        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#    database-platform: org.hibernate.dialect.MySQL8InnoDBDialect        
+  datasource:
+    url: jdbc:mysql://localhost:3306/star-wars-trivia
+    username: root
+    password: p@$$w0rd
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+swapi:
+  url: https://swapi.dev/api
+  search-people-path: /people/?search={searchText}

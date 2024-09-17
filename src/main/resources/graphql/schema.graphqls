@@ -1,0 +1,83 @@
+schema{
+    query:Query
+    mutation:Mutation
+}
+
+type Query {
+    searchPeople(searchText: String!): SearchResult
+    searchPeopleFromDB(searchText: String!): SearchResult
+}
+
+type Mutation{
+    saveSearchResult(searchResultInput: SearchResultInput!): SearchResult
+}
+
+type SearchResult {
+    people: [People]
+}
+
+type People {
+	name: String
+	height: String
+	mass: String
+	gender: String
+	films: [Film]
+	vehicles: [Vehicle]
+}
+
+type Film {
+    title: String!
+    episodeId: Int
+    director: String
+    producer: String
+    releaseDate: String
+}
+
+type Vehicle {
+    name: String!
+    model: String!
+    manufacturer: String
+    costInCredits: String
+    length: String
+    maxAtmospheringSpeed: String
+    crew: String
+    passengers: String
+    cargoCapacity: String
+    consumables: String
+    vehicleClass: String
+}
+
+input SearchResultInput {
+    people: [PeopleInput]
+}
+
+input PeopleInput {
+	name: String
+	height: String
+	mass: String
+	gender: String
+	films: [FilmInput]
+	vehicles: [VehicleInput]
+}
+
+input FilmInput {
+    title: String!
+    episodeId: Int
+    director: String
+    producer: String
+    releaseDate: String
+}
+
+input VehicleInput {
+    name: String!
+    model: String!
+    manufacturer: String
+    costInCredits: String
+    length: String
+    maxAtmospheringSpeed: String
+    crew: String
+    passengers: String
+    cargoCapacity: String
+    consumables: String
+    vehicleClass: String
+}
