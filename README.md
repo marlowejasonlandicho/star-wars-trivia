@@ -1,6 +1,6 @@
 # Synopsis
 
-To Do Spring Boot App
+Star Wars Trivia Search
 
 # Services available
 
